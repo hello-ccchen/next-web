@@ -1,0 +1,12 @@
+.container {
+  height: 500px;
+  max-width: 75%;
+
+  .content {
+    height: 100%;
+  }
+
+  .bggradient {
+    background-image: var(--bs-gradient);
+  }
+}
