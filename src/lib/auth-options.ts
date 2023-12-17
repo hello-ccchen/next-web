@@ -11,4 +11,7 @@ export const authOptions: NextAuthOptions = {
       clientSecret: GOOLE_CLIENT_SECRET,
     }),
   ],
+  pages: {
+    signIn: "/login",
+  },
 };

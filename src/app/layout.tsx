@@ -1,10 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { CommonProps } from "@/models/common-props";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
+import AuthProvider from "@/components/auth-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,19 +15,17 @@ export const metadata: Metadata = {
   authors: [{ name: "THREE C", url: "https://github.com/hello-ccchen" }],
 };
 
-interface IProps {
-  children: ReactNode;
-}
-
-export default function RootLayout({ children }: IProps) {
+export default function RootLayout({ children }: CommonProps) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NavBar />
-        <main className="d-flex justify-content-center align-items-center">
-          {children}
-        </main>
-        <Footer />
+        <AuthProvider>
+          <NavBar />
+          <main className="d-flex justify-content-center align-items-center">
+            {children}
+          </main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
