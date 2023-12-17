@@ -1,9 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
 import "./globals.css";
+import NavBar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,11 +14,11 @@ export const metadata: Metadata = {
   authors: [{ name: "THREE C", url: "https://github.com/hello-ccchen" }],
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+interface IProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: IProps) {
   return (
     <html lang="en">
       <body className={inter.className}>
