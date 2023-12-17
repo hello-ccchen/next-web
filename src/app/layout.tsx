@@ -2,10 +2,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { CommonProps } from "@/models/common-props";
+import { CommonProps } from "@/types/common-props";
+import AuthProvider from "@/context/auth-provider";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
-import AuthProvider from "@/components/auth-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 

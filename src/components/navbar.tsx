@@ -8,7 +8,7 @@ const NavBar = async () => {
       <div className="container-fluid">
         <div className="d-flex justify-content-center align-items-center">
           <Link className="navbar-brand me-5" href="/">
-            <Image src="/next.svg" alt="Home Logo" width={100} height={24} />
+            <Image src="/next.svg" alt="Home Logo" width={100} height={24} priority />
           </Link>
           <Link href="/users">User List</Link>
         </div>

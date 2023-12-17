@@ -6,8 +6,8 @@ import styles from "./page.module.css";
 
 const Login = () => {
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") ?? "/";
-  const isNotRedirectPage = callbackUrl === "/";
+  const callbackUrl = searchParams.get("callbackUrl") ?? "/users";
+  const isNotRedirectPage = callbackUrl === "/users";
 
   return (
     <div className={`container shadow-sm ${styles.container}`}>
@@ -28,7 +28,7 @@ const Login = () => {
           >
             <Image
               src="/google.svg"
-              alt="login"
+              alt="google"
               width={24}
               height={24}
               className="me-2"

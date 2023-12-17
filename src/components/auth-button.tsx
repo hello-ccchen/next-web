@@ -9,13 +9,21 @@ const AuthButton = () => {
   return status === "authenticated" ? (
     <div>
       {data.user?.name}
+      {data.user?.image && (
+        <img
+          src={data.user.image}
+          className="m-2 rounded-circle"
+          width={24}
+          height={24}
+        />
+      )}
       <Image
         onClick={() => signOut({ callbackUrl: "/" })}
         src="/logout.svg"
         alt="login"
         width={24}
         height={24}
-        className="ms-1"
+        className="ms-2"
         style={{
           cursor: "pointer",
         }}
@@ -29,7 +37,7 @@ const AuthButton = () => {
         alt="login"
         width={24}
         height={24}
-        className="ms-1"
+        className="ms-2"
       />
     </Link>
   );

@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
 
-export interface CommonProps {
+export type CommonProps = {
   children: ReactNode;
 }
