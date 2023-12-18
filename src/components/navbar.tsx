@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import AuthButton from "./auth-button";
 
-const NavBar = async () => {
+const NavBar = () => {
   return (
     <nav className="navbar fixed-top navbar-light bg-light shadow border-bottom border-light">
       <div className="container-fluid">

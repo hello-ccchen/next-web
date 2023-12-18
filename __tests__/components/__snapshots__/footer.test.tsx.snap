@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Footer component unchanged 1`] = `
+<div>
+  <footer
+    class="fixed-bottom bg-light p-3"
+  >
+    <span
+      class="small text-muted"
+    >
+      Made by THREEC ©
+    </span>
+  </footer>
+</div>
+`;

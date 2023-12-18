@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar component renders \`Sign in\` button when user's session not exists 1`] = `
+<div>
+  <nav
+    class="navbar fixed-top navbar-light bg-light shadow border-bottom border-light"
+  >
+    <div
+      class="container-fluid"
+    >
+      <div
+        class="d-flex justify-content-center align-items-center"
+      >
+        <a
+          class="navbar-brand me-5"
+          href="/"
+        >
+          <img
+            alt="Home Logo"
+            data-nimg="1"
+            decoding="async"
+            fetchpriority="high"
+            height="24"
+            src="/next.svg"
+            style="color: transparent;"
+            width="100"
+          />
+        </a>
+        <a
+          href="/users"
+        >
+          User List
+        </a>
+      </div>
+      <a
+        href="/login"
+      >
+        Sign in
+        <img
+          alt="login"
+          class="ms-2"
+          data-nimg="1"
+          decoding="async"
+          height="24"
+          loading="lazy"
+          src="/login.svg"
+          style="color: transparent;"
+          width="24"
+        />
+      </a>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`NavBar component renders logged-in user's info when user's session exists 1`] = `
+<div>
+  <nav
+    class="navbar fixed-top navbar-light bg-light shadow border-bottom border-light"
+  >
+    <div
+      class="container-fluid"
+    >
+      <div
+        class="d-flex justify-content-center align-items-center"
+      >
+        <a
+          class="navbar-brand me-5"
+          href="/"
+        >
+          <img
+            alt="Home Logo"
+            data-nimg="1"
+            decoding="async"
+            fetchpriority="high"
+            height="24"
+            src="/next.svg"
+            style="color: transparent;"
+            width="100"
+          />
+        </a>
+        <a
+          href="/users"
+        >
+          User List
+        </a>
+      </div>
+      <div>
+        Test User
+        <img
+          alt="login"
+          class="ms-2"
+          data-nimg="1"
+          decoding="async"
+          height="24"
+          loading="lazy"
+          src="/logout.svg"
+          style="color: transparent; cursor: pointer;"
+          width="24"
+        />
+      </div>
+    </div>
+  </nav>
+</div>
+`;

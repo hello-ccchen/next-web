@@ -21,10 +21,10 @@
     "baseUrl": ".",
     "paths": {
       "@/app/*": ["./src/app/*"],
+      "@/common/*": ["src/common/*"],
       "@/components/*": ["./src/components/*"],
       "@/context/*": ["./src/context/*"],
       "@/store/*": ["./src/store/*"],
-      "@/common/*": ["src/common/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
