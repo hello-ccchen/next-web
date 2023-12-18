@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { IUserState } from "@/interfaces/users-interface";
+import { getUsers } from "@/services/users-service";
 import { RootState } from "@/store/store";
-import { IUserState } from "./interface";
-import { getUsers } from "./service";
 
 const initialState: IUserState = {
   userList: [],

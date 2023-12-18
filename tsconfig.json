@@ -21,9 +21,10 @@
     "baseUrl": ".",
     "paths": {
       "@/app/*": ["./src/app/*"],
-      "@/common/*": ["src/common/*"],
       "@/components/*": ["./src/components/*"],
       "@/context/*": ["./src/context/*"],
+      "@/interfaces/*": ["./src/interfaces/*"],
+      "@/services/*": ["./src/services/*"],
       "@/store/*": ["./src/store/*"],
     }
   },

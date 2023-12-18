@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthButton component renders \`Sign in\` text when user's session not exists 1`] = `
+<div>
+  <a
+    href="/login"
+  >
+    Sign in
+    <img
+      alt="login"
+      class="ms-2"
+      data-nimg="1"
+      decoding="async"
+      height="24"
+      loading="lazy"
+      src="/login.svg"
+      style="color: transparent;"
+      width="24"
+    />
+  </a>
+</div>
+`;
+
+exports[`AuthButton component renders logged-in user's info when user's session exists 1`] = `
+<div>
+  <div>
+    Test User
+    <img
+      alt="logout"
+      class="ms-2"
+      data-nimg="1"
+      decoding="async"
+      height="24"
+      loading="lazy"
+      src="/logout.svg"
+      style="color: transparent; cursor: pointer;"
+      width="24"
+    />
+  </div>
+</div>
+`;

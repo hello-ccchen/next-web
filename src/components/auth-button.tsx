@@ -20,7 +20,7 @@ const AuthButton = () => {
       <Image
         onClick={() => signOut({ callbackUrl: "/" })}
         src="/logout.svg"
-        alt="login"
+        alt="logout"
         width={24}
         height={24}
         className="ms-2"

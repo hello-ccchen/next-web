@@ -12,6 +12,12 @@ const customJestConfig = {
   collectCoverage: true,
   collectCoverageFrom: [
     "src/**/*.{js,jsx,ts,tsx}",
+    "!src/app/api/auth/**/*",
+    "!src/app/layout.tsx",
+    "!src/context/**/*",
+    "!src/store/store.ts",
+    "!src/store/store-provider.tsx",
+    "!src/middleware.ts",
     "!**/*.d.ts",
     "!**/node_modules/**",
     "!**/.next/**",

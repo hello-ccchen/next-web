@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders UserCard component unchanged 1`] = `
+<div>
+  <div
+    class="d-flex flex-wrap justify-content-center align-items-center my-auto"
+  >
+    <img
+      class="m-2 rounded-circle"
+      src="http:image/test/abcde.jpg"
+    />
+    <div
+      class="d-flex flex-column align-items-center w-100"
+    >
+      <h6>
+        foo bar
+      </h6>
+      <div
+        class="d-flex align-items-center"
+      >
+        <span>
+          ****@email.com
+        </span>
+        <img
+          alt="mask"
+          class="ms-2"
+          data-nimg="1"
+          decoding="async"
+          height="16"
+          loading="lazy"
+          src="/eye.svg"
+          style="color: transparent; cursor: pointer;"
+          width="16"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

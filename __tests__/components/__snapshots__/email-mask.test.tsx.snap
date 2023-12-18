@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmailMask component email should masked correctly 1`] = `
+<div>
+  <div
+    class="d-flex align-items-center"
+  >
+    <span>
+      ****@mail.com
+    </span>
+    <img
+      alt="mask"
+      class="ms-2"
+      data-nimg="1"
+      decoding="async"
+      height="16"
+      loading="lazy"
+      src="/eye.svg"
+      style="color: transparent; cursor: pointer;"
+      width="16"
+    />
+  </div>
+</div>
+`;
