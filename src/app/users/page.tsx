@@ -1,23 +1,20 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import EmailMask from "@/components/email-mask";
+import { useAppDispatch, useAppSelector } from "@/store/store";
 import styles from "./page.module.css";
-import { IUser } from "./interface";
-import { getAllUserList } from "./service";
+import { fetchUsers, usersSelector } from "./slice";
 
 const Users = () => {
-  const [userList, setUserList] = useState<IUser[]>([]);
-  const [isLoading, setLoading] = useState(true);
+  const dispatch = useAppDispatch();
+  const { userList, isLoading, error } = useAppSelector(usersSelector);
 
   useEffect(() => {
-    getAllUserList().then((result) => {
-      setUserList(result);
-      setLoading(false);
-    });
+    dispatch(fetchUsers());
   }, []);
 
   if (isLoading) return <h1>Loading...</h1>;
-  if (userList.length === 0 ) return <h1>No data</h1>;
+  if (userList.length === 0 || error) return <h1>Uh-oh, no data</h1>;
 
   return (
     <div className={`row mx-auto w-75 ${styles.container}`}>

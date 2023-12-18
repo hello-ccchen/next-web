@@ -14,3 +14,9 @@ export interface IUserAPIResponse {
   data: IUser[];
   support: { url: string; text: string };
 }
+
+export interface IUserState {
+  userList: IUser[];
+  isLoading: boolean;
+  error: string | undefined;
+}
