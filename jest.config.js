@@ -14,7 +14,7 @@ const customJestConfig = {
     "src/**/*.{js,jsx,ts,tsx}",
     "!src/app/api/auth/**/*",
     "!src/app/layout.tsx",
-    "!src/context/**/*",
+    "!src/contexts/**/*",
     "!src/store/store.ts",
     "!src/store/store-provider.tsx",
     "!src/middleware.ts",

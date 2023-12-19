@@ -12,7 +12,7 @@ export interface IUserAPIResponse {
   total: number;
   total_pages: number;
   data: IUser[];
-  support: { url: string; text: string };
+  support?: { url: string; text: string };
 }
 
 export interface IUserState {

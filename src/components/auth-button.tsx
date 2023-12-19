@@ -7,14 +7,23 @@ const AuthButton = () => {
   const { status, data } = useSession();
 
   return status === "authenticated" ? (
-    <div>
+    <div className="d-flex justify-content-center align-items-center">
       {data.user?.name}
-      {data.user?.image && (
+      {data.user?.image ? (
         <img
           src={data.user.image}
+          alt="profile"
           className="m-2 rounded-circle"
           width={24}
           height={24}
+        />
+      ) : (
+        <Image
+          src="/person.svg"
+          alt="profile"
+          width={24}
+          height={24}
+          className="m-2 border border-dark rounded-circle"
         />
       )}
       <Image

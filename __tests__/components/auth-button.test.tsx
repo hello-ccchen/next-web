@@ -39,6 +39,23 @@ describe("AuthButton component", () => {
     expect(getByText("Test User")).toBeTruthy();
   });
 
+  it("renders logged-in user's profile image when is available", () => {
+    const mockSession: Session = {
+      user: { name: "Test User", image: "abcd.jpg" },
+      expires: "",
+    };
+
+    (useSession as jest.Mock).mockReturnValue({
+      status: "authenticated",
+      data: mockSession,
+    });
+
+    const { container, getByAltText } = render(<AuthButton />);
+    expect(container).toMatchSnapshot();
+    const imgElement = getByAltText("profile");
+    expect(imgElement.getAttribute("src")).toBe("abcd.jpg");
+  });
+
   it("should sign out when user click the sign out button", () => {
     const mockSession: Session = {
       user: { name: "Test User" },

@@ -6,8 +6,16 @@ exports[`renders UserCard component unchanged 1`] = `
     class="d-flex flex-wrap justify-content-center align-items-center my-auto"
   >
     <img
+      alt="avatar"
       class="m-2 rounded-circle"
-      src="http:image/test/abcde.jpg"
+      data-nimg="1"
+      decoding="async"
+      height="150"
+      loading="lazy"
+      src="/_next/image?url=http%3Aimage%2Ftest%2Fabcde.jpg&w=384&q=75"
+      srcset="/_next/image?url=http%3Aimage%2Ftest%2Fabcde.jpg&w=256&q=75 1x, /_next/image?url=http%3Aimage%2Ftest%2Fabcde.jpg&w=384&q=75 2x"
+      style="color: transparent;"
+      width="150"
     />
     <div
       class="d-flex flex-column align-items-center w-100"

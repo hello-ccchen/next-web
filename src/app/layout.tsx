@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
-import AuthProvider from "@/context/auth-provider";
+import AuthProvider from "@/contexts/auth-provider";
 import { CommonProps } from "@/interfaces/common-interface";
 import StoreProvider from "@/store/store-provider";
 
