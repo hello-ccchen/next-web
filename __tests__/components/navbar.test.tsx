@@ -3,7 +3,7 @@
  */
 import { render } from "@testing-library/react";
 import { useSession } from "next-auth/react";
-import NavBar from "@/components/navbar";
+import NavBar from "@/components/core/navbar";
 
 jest.mock("next-auth/react", () => ({
   useSession: jest.fn(),

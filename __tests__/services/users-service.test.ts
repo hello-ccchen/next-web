@@ -1,66 +1,10 @@
-import { IUserAPIResponse } from "@/interfaces/users-interface";
-import { getUsers } from "@/services/users-service";
+import { getUsers } from "@/services/users/users-service";
+import {
+  mockUserResponseDataWithOnePage,
+  mockUserResponseDataWithTwoPage_Page1,
+  mockUserResponseDataWithTwoPage_Page2,
+} from "../config/mocks/users-data.mock";
 
-const mockUserResponseDataWithOnePage: IUserAPIResponse = {
-  page: 1,
-  per_page: 1,
-  total: 1,
-  total_pages: 1,
-  data: [
-    {
-      id: 1,
-      email: "abcd@mail.com",
-      first_name: "Guava",
-      last_name: "Banana",
-      avatar: "abcd.jpg",
-    },
-    {
-      id: 2,
-      email: "wxyz@mail.com",
-      first_name: "Apple",
-      last_name: "Orange",
-      avatar: "abcd.jpg",
-    },
-  ],
-};
-
-const mockUserResponseDataWithTwoPage_Page1: IUserAPIResponse = {
-  page: 1,
-  per_page: 1,
-  total: 1,
-  total_pages: 2,
-  data: [
-    {
-      id: 1,
-      email: "abcd@mail.com",
-      first_name: "Guava",
-      last_name: "Banana",
-      avatar: "abcd.jpg",
-    },
-    {
-      id: 2,
-      email: "wxyz@mail.com",
-      first_name: "Papaya",
-      last_name: "Watermelon",
-      avatar: "abcd.jpg",
-    },
-  ],
-};
-const mockUserResponseDataWithTwoPage_Page2: IUserAPIResponse = {
-  page: 2,
-  per_page: 1,
-  total: 2,
-  total_pages: 2,
-  data: [
-    {
-      id: 2,
-      email: "xyz@mail.com",
-      first_name: "yyy",
-      last_name: "xxx",
-      avatar: "xxx.jpg",
-    },
-  ],
-};
 describe("Users service", () => {
   beforeEach(() => {
     global.fetch = jest.fn();
@@ -71,14 +15,17 @@ describe("Users service", () => {
   });
 
   it("fetch users from the API with correct filtered result", async () => {
+    // Arrange
     (global.fetch as jest.Mock).mockResolvedValue({
       ok: true,
       json: async () => mockUserResponseDataWithOnePage,
       status: 200,
     });
 
+    // Act
     const data = await getUsers();
 
+    // Assert
     expect(data).toEqual([mockUserResponseDataWithOnePage.data[0]]);
     expect(global.fetch).toHaveBeenCalledWith(
       "https://reqres.in/api/users?page=1"
@@ -86,6 +33,7 @@ describe("Users service", () => {
   });
 
   it("fetch users from the API by traverse all paging with correct filtered result", async () => {
+    // Arrange
     (global.fetch as jest.Mock)
       .mockResolvedValueOnce({
         ok: true,
@@ -98,8 +46,10 @@ describe("Users service", () => {
         status: 200,
       });
 
+    // Act
     const data = await getUsers();
 
+    // Assert
     expect(data).toEqual(mockUserResponseDataWithTwoPage_Page1.data);
     expect(global.fetch).toHaveBeenCalledWith(
       "https://reqres.in/api/users?page=1"
@@ -110,11 +60,13 @@ describe("Users service", () => {
   });
 
   it("handles API call failure", async () => {
+    // Arrange
     (global.fetch as jest.Mock).mockResolvedValue({
       ok: false,
       status: 500,
     });
 
+    // Act & Assert
     await expect(getUsers()).rejects.toThrow("Failed to get user list.");
     expect(global.fetch).toHaveBeenCalledWith(
       "https://reqres.in/api/users?page=1"

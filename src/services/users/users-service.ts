@@ -1,4 +1,4 @@
-import { IUser, IUserAPIResponse } from "@/interfaces/users-interface";
+import { IUser, IUserAPIResponse } from "@/interfaces/users/users-interface";
 
 export const getUsers = async (): Promise<IUser[]> => {
   let userList: IUser[] = [];

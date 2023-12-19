@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Users Page should renders \`Loading...\` when loading is true 1`] = `
+<div>
+  <h1>
+    Loading...
+  </h1>
+</div>
+`;
+
+exports[`Users Page should renders \`No data\` when contain no records 1`] = `
+<div>
+  <h1>
+    Uh-oh, no data
+  </h1>
+</div>
+`;
+
+exports[`Users Page should renders correctly when contain records 1`] = `
+<div>
+  <div
+    class="row mx-auto w-75 container"
+  >
+    <div
+      class="col-sm-4"
+    >
+      <div
+        class="d-flex flex-wrap justify-content-center align-items-center my-auto"
+      >
+        <img
+          alt="avatar"
+          class="m-2 rounded-circle"
+          data-nimg="1"
+          decoding="async"
+          fetchpriority="high"
+          height="150"
+          src="/_next/image?url=https%3A%2F%2Fexample%2Fguava.jpg&w=384&q=75"
+          srcset="/_next/image?url=https%3A%2F%2Fexample%2Fguava.jpg&w=256&q=75 1x, /_next/image?url=https%3A%2F%2Fexample%2Fguava.jpg&w=384&q=75 2x"
+          style="color: transparent;"
+          width="150"
+        />
+        <div
+          class="d-flex flex-column align-items-center w-100"
+        >
+          <h6>
+            Guava Banana
+          </h6>
+          <div
+            class="d-flex align-items-center"
+          >
+            <span>
+              ****@mail.com
+            </span>
+            <img
+              alt="mask"
+              class="ms-2"
+              data-nimg="1"
+              decoding="async"
+              height="16"
+              loading="lazy"
+              src="/eye.svg"
+              style="color: transparent; cursor: pointer;"
+              width="16"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-sm-4"
+    >
+      <div
+        class="d-flex flex-wrap justify-content-center align-items-center my-auto"
+      >
+        <img
+          alt="avatar"
+          class="m-2 rounded-circle"
+          data-nimg="1"
+          decoding="async"
+          fetchpriority="high"
+          height="150"
+          src="/_next/image?url=https%3A%2F%2Fexample%2Fapple.jpg&w=384&q=75"
+          srcset="/_next/image?url=https%3A%2F%2Fexample%2Fapple.jpg&w=256&q=75 1x, /_next/image?url=https%3A%2F%2Fexample%2Fapple.jpg&w=384&q=75 2x"
+          style="color: transparent;"
+          width="150"
+        />
+        <div
+          class="d-flex flex-column align-items-center w-100"
+        >
+          <h6>
+            Apple Orange
+          </h6>
+          <div
+            class="d-flex align-items-center"
+          >
+            <span>
+              ****@mail.com
+            </span>
+            <img
+              alt="mask"
+              class="ms-2"
+              data-nimg="1"
+              decoding="async"
+              height="16"
+              loading="lazy"
+              src="/eye.svg"
+              style="color: transparent; cursor: pointer;"
+              width="16"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

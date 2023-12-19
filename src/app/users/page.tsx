@@ -1,8 +1,8 @@
 "use client";
 import { useEffect } from "react";
-import UserCard from "@/components/user-card";
+import UserCard from "@/components/users/user-card";
 import { useAppDispatch, useAppSelector } from "@/store/store";
-import { fetchUsers, usersSelector } from "@/store/users-slice";
+import { fetchUsers, usersSelector } from "@/store/users/users-slice";
 import styles from "./page.module.css";
 
 const Users = () => {

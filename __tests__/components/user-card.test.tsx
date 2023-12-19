@@ -2,8 +2,8 @@
  * @jest-environment jsdom
  */
 import { render } from "@testing-library/react";
-import UserCard from "@/components/user-card";
-import { IUser } from "@/interfaces/users-interface";
+import UserCard from "@/components/users/user-card";
+import { IUser } from "@/interfaces/users/users-interface";
 
 it("renders UserCard component unchanged", () => {
   const mockUser: IUser = {

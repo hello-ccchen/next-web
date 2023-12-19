@@ -1,6 +1,6 @@
 "use client";
 import { Provider } from "react-redux";
-import { CommonProps } from "@/interfaces/common-interface";
+import { CommonProps } from "@/interfaces/common/common-interface";
 import { store } from "./store";
 
 function StoreProvider({ children }: CommonProps) {

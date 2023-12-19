@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Page renders \`You're almost there!\` when detected no callbackurl 1`] = `
+<div>
+  <div
+    class="container shadow-sm container"
+  >
+    <div
+      class="row content"
+    >
+      <div
+        class="bggradient bg-primary 
+          col-sm-6 border d-flex justify-content-center align-items-center"
+      >
+        <h1
+          class="text-white fw-bolder"
+        >
+          You're almost there!
+        </h1>
+      </div>
+      <div
+        class="col-sm-6 border d-flex justify-content-center align-items-center"
+      >
+        <div
+          class="d-flex flex-nowrap justify-content-center w-75 border shadow py-3 btn"
+        >
+          <img
+            alt="google"
+            class="me-2"
+            data-nimg="1"
+            decoding="async"
+            height="24"
+            loading="lazy"
+            src="/google.svg"
+            style="color: transparent;"
+            width="24"
+          />
+          Continue with Google
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Login Page renders no access rigth when detected callbackurl 1`] = `
+<div>
+  <div
+    class="container shadow-sm container"
+  >
+    <div
+      class="row content"
+    >
+      <div
+        class="bggradient bg-info 
+          col-sm-6 border d-flex justify-content-center align-items-center"
+      >
+        <h1
+          class="text-white fw-bolder"
+        >
+          401: Uh-oh, you do not have access.
+        </h1>
+      </div>
+      <div
+        class="col-sm-6 border d-flex justify-content-center align-items-center"
+      >
+        <div
+          class="d-flex flex-nowrap justify-content-center w-75 border shadow py-3 btn"
+        >
+          <img
+            alt="google"
+            class="me-2"
+            data-nimg="1"
+            decoding="async"
+            height="24"
+            loading="lazy"
+            src="/google.svg"
+            style="color: transparent;"
+            width="24"
+          />
+          Continue with Google
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

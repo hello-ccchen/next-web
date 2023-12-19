@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 import { fireEvent, render } from "@testing-library/react";
-import EmailMask from "@/components/email-mask";
+import EmailMask from "@/components/users/email-mask";
 
 describe("EmailMask component", () => {
   it("email should masked correctly", () => {

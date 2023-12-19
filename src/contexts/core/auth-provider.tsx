@@ -1,6 +1,6 @@
 "use client";
 import { SessionProvider } from "next-auth/react";
-import { CommonProps } from "@/interfaces/common-interface";
+import { CommonProps } from "@/interfaces/common/common-interface";
 
 function AuthProvider({ children }: CommonProps) {
   return <SessionProvider>{children}</SessionProvider>;
