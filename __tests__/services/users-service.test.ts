@@ -1,4 +1,4 @@
-import { getUsers } from "@/services/users/users-service";
+import UsersService from "@/services/users/users-service";
 import {
   mockUserResponseDataWithOnePage,
   mockUserResponseDataWithTwoPage_Page1,
@@ -23,7 +23,7 @@ describe("Users service", () => {
     });
 
     // Act
-    const data = await getUsers();
+    const data = await UsersService.getUsers();
 
     // Assert
     expect(data).toEqual([mockUserResponseDataWithOnePage.data[0]]);
@@ -47,7 +47,7 @@ describe("Users service", () => {
       });
 
     // Act
-    const data = await getUsers();
+    const data = await UsersService.getUsers();
 
     // Assert
     expect(data).toEqual(mockUserResponseDataWithTwoPage_Page1.data);
@@ -67,7 +67,7 @@ describe("Users service", () => {
     });
 
     // Act & Assert
-    await expect(getUsers()).rejects.toThrow("Failed to get user list.");
+    await expect(UsersService.getUsers()).rejects.toThrow("Failed to get user list.");
     expect(global.fetch).toHaveBeenCalledWith(
       "https://reqres.in/api/users?page=1"
     );

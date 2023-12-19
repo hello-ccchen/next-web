@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { IUserState } from "@/interfaces/users/users-interface";
-import { getUsers } from "@/services/users/users-service";
+import UsersService from "@/services/users/users-service";
 import { RootState } from "@/store/store";
 
 const initialState: IUserState = {
@@ -11,7 +11,7 @@ const initialState: IUserState = {
 
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
   try {
-    const users = await getUsers();
+    const users = await UsersService.getUsers();
     return users;
   } catch (error) {
     throw error;

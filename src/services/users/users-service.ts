@@ -1,6 +1,6 @@
 import { IUser, IUserAPIResponse } from "@/interfaces/users/users-interface";
 
-export const getUsers = async (): Promise<IUser[]> => {
+const getUsers = async (): Promise<IUser[]> => {
   let userList: IUser[] = [];
   let currentPage = 1;
   let totalPages = 0;
@@ -20,3 +20,4 @@ export const getUsers = async (): Promise<IUser[]> => {
   return userList;
 };
 
+export default { getUsers }
