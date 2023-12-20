@@ -11,8 +11,9 @@ const initialState: IUserState = {
 
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
   try {
-    const users = await UsersService.getUsers();
-    return users;
+    const response = await fetch('/api/users');
+    const users = await response.json();
+    return users.result;
   } catch (error) {
     throw error;
   }

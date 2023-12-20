@@ -68,9 +68,12 @@ describe("User Slice", () => {
 
   it("fetchUsers async thunk action should calls the API correctly", async () => {
     // Arrange
-    jest
-      .spyOn(UsersService, "getUsers")
-      .mockResolvedValue(mockUserResponseDataWithOnePage.data);
+    global.fetch = jest.fn();
+    (global.fetch as jest.Mock).mockResolvedValue({
+      status: 200,
+      json: async () => mockUserResponseDataWithOnePage.data,
+    });
+
     const dispatch = jest.fn();
     const getState = jest.fn();
     const action = fetchUsers();
@@ -79,6 +82,7 @@ describe("User Slice", () => {
     await action(dispatch, getState, undefined);
 
     // Assert
-    expect(UsersService.getUsers).toHaveBeenCalled();
+    expect(global.fetch).toHaveBeenCalledWith("/api/users");
+    jest.restoreAllMocks();
   });
 });
