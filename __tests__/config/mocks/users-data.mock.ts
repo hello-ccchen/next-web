@@ -1,4 +1,4 @@
-import { IUserAPIResponse } from "@/interfaces/users/users-interface";
+import { IUser, IUserAPIResponse } from "@/interfaces/users/users-interface";
 
 export const mockUserResponseDataWithOnePage: IUserAPIResponse = {
   page: 1,
@@ -22,6 +22,16 @@ export const mockUserResponseDataWithOnePage: IUserAPIResponse = {
     },
   ],
 };
+
+export const mockFilteredUserResponseDataWithOnePage: IUser[] = [
+  {
+    id: 1,
+    email: "YWJjZA==@mail.com",
+    first_name: "Guava",
+    last_name: "Banana",
+    avatar: "https://example/guava.jpg",
+  },
+];
 
 export const mockUserResponseDataWithTwoPage_Page1: IUserAPIResponse = {
   page: 1,
@@ -61,3 +71,20 @@ export const mockUserResponseDataWithTwoPage_Page2: IUserAPIResponse = {
     },
   ],
 };
+
+export const mockFiltedUserResponseDataWithTwoPage: IUser[] = [
+  {
+    id: 1,
+    email: "YWJjZA==@mail.com",
+    first_name: "Guava",
+    last_name: "Banana",
+    avatar: "https://example/guava.jpg",
+  },
+  {
+    id: 2,
+    email: "d3h5eg==@mail.com",
+    first_name: "Papaya",
+    last_name: "Watermelon",
+    avatar: "https://example/papaya.jpg",
+  },
+];

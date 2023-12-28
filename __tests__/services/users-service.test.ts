@@ -1,5 +1,7 @@
 import UsersService from "@/services/users/users-service";
 import {
+  mockFiltedUserResponseDataWithTwoPage,
+  mockFilteredUserResponseDataWithOnePage,
   mockUserResponseDataWithOnePage,
   mockUserResponseDataWithTwoPage_Page1,
   mockUserResponseDataWithTwoPage_Page2,
@@ -26,7 +28,7 @@ describe("Users service", () => {
     const data = await UsersService.getUsers();
 
     // Assert
-    expect(data).toEqual([mockUserResponseDataWithOnePage.data[0]]);
+    expect(data).toEqual([mockFilteredUserResponseDataWithOnePage[0]]);
     expect(global.fetch).toHaveBeenCalledWith(
       "https://reqres.in/api/users?page=1"
     );
@@ -50,7 +52,7 @@ describe("Users service", () => {
     const data = await UsersService.getUsers();
 
     // Assert
-    expect(data).toEqual(mockUserResponseDataWithTwoPage_Page1.data);
+    expect(data).toEqual(mockFiltedUserResponseDataWithTwoPage);
     expect(global.fetch).toHaveBeenCalledWith(
       "https://reqres.in/api/users?page=1"
     );

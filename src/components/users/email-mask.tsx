@@ -8,25 +8,25 @@ type EmailProps = {
 const EmailMask = ({ email }: EmailProps) => {
   const [isMasked, setIsMasked] = useState(true);
 
-  const maskEmail = (email: string): string => {
-    const atIndex = email.indexOf("@");
+  const maskEmail = (originalEmail: string): string => {
+    const atIndex = originalEmail.indexOf("@");
     if (atIndex !== -1) {
-      const maskedPart = email.substring(0, atIndex).replace(/./g, "*");
-      const domainPart = email.substring(atIndex);
+      const maskedPart = isMasked ? originalEmail.substring(0, atIndex).replace(/./g, "*") : atob(originalEmail.substring(0, atIndex));
+      const domainPart = originalEmail.substring(atIndex);
       return maskedPart + domainPart;
     }
-    return email;
+    return originalEmail;
   };
 
-  const revealEmail = () => {
+  const onRevealEmailClick = () => {
     setIsMasked(!isMasked);
   };
 
   return (
     <div className="d-flex align-items-center">
-      <span>{isMasked ? maskEmail(email) : email}</span>
+      <span>{maskEmail(email)}</span>
       <Image
-        onClick={revealEmail}
+        onClick={onRevealEmailClick}
         src={isMasked ? "/eye.svg" : "/eye-closed.svg"}
         alt="mask"
         width={16}
