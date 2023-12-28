@@ -23,10 +23,20 @@ export const mockUserResponseDataWithOnePage: IUserAPIResponse = {
   ],
 };
 
+export const mockUserResponseDataWithIdOne = {
+  data: {
+    id: 1,
+    email: "abcd@mail.com",
+    first_name: "Guava",
+    last_name: "Banana",
+    avatar: "https://example/guava.jpg",
+  },
+};
+
 export const mockFilteredUserResponseDataWithOnePage: IUser[] = [
   {
     id: 1,
-    email: "YWJjZA==@mail.com",
+    email: "*****",
     first_name: "Guava",
     last_name: "Banana",
     avatar: "https://example/guava.jpg",
@@ -75,14 +85,14 @@ export const mockUserResponseDataWithTwoPage_Page2: IUserAPIResponse = {
 export const mockFiltedUserResponseDataWithTwoPage: IUser[] = [
   {
     id: 1,
-    email: "YWJjZA==@mail.com",
+    email: "*****",
     first_name: "Guava",
     last_name: "Banana",
     avatar: "https://example/guava.jpg",
   },
   {
     id: 2,
-    email: "d3h5eg==@mail.com",
+    email: "*****",
     first_name: "Papaya",
     last_name: "Watermelon",
     avatar: "https://example/papaya.jpg",

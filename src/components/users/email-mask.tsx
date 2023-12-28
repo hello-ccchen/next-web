@@ -1,30 +1,26 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { IUser } from "@/interfaces/users/users-interface";
+import { useAppDispatch } from "@/store/store";
+import { userAction, revealUserEmail } from "@/store/users/users-slice";
 
-type EmailProps = {
-  email: string;
-};
-const EmailMask = ({ email }: EmailProps) => {
+const EmailMask = (user: IUser) => {
+  const dispatch = useAppDispatch();
   const [isMasked, setIsMasked] = useState(true);
 
-  const maskEmail = (originalEmail: string): string => {
-    const atIndex = originalEmail.indexOf("@");
-    if (atIndex !== -1) {
-      const maskedPart = isMasked ? originalEmail.substring(0, atIndex).replace(/./g, "*") : atob(originalEmail.substring(0, atIndex));
-      const domainPart = originalEmail.substring(atIndex);
-      return maskedPart + domainPart;
-    }
-    return originalEmail;
-  };
-
   const onRevealEmailClick = () => {
+    if (isMasked) {
+      dispatch(revealUserEmail(user.id));
+    } else {
+      dispatch(userAction.maskUserEmail(user.id));
+    }
     setIsMasked(!isMasked);
   };
 
   return (
     <div className="d-flex align-items-center">
-      <span>{maskEmail(email)}</span>
+      <span>{user.email}</span>
       <Image
         onClick={onRevealEmailClick}
         src={isMasked ? "/eye.svg" : "/eye-closed.svg"}

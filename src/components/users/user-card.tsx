@@ -8,7 +8,7 @@ const UserCard = (user: IUser) => {
       <Image src={user.avatar} alt="avatar" priority className="m-2 rounded-circle" width={150} height={150} />
       <div className="d-flex flex-column align-items-center w-100">
         <h6>{`${user.first_name} ${user.last_name}`}</h6>
-        <EmailMask email={user.email} />
+        <EmailMask {...user} />
       </div>
     </div>
   );

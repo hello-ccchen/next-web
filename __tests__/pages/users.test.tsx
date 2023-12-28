@@ -4,7 +4,7 @@
 import { render } from "@testing-library/react";
 import Users from "@/app/users/page";
 import * as reactRedux from "@/store/store";
-import { mockUserResponseDataWithOnePage } from "../config/mocks/users-data.mock";
+import { mockFilteredUserResponseDataWithOnePage } from "../config/mocks/users-data.mock";
 
 describe("Users Page", () => {
   const useAppSelectorMock = jest.spyOn(reactRedux, "useAppSelector");
@@ -18,7 +18,7 @@ describe("Users Page", () => {
   it("should renders correctly when contain records", () => {
     // Arrange
     useAppSelectorMock.mockReturnValue({
-      userList: mockUserResponseDataWithOnePage.data,
+      userList: mockFilteredUserResponseDataWithOnePage,
       isLoading: false,
       error: undefined,
     });
@@ -32,7 +32,7 @@ describe("Users Page", () => {
     const divElements = container.querySelectorAll(".col-sm-4");
     expect(divElements).toBeTruthy();
     expect(divElements.length).toBe(
-      mockUserResponseDataWithOnePage.data.length
+        mockFilteredUserResponseDataWithOnePage.length
     );
   });
 

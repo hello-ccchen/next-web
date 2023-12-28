@@ -1,6 +1,6 @@
 import { IUserState } from "@/interfaces/users/users-interface";
-import usersReducer, { fetchUsers } from "@/store/users/users-slice";
-import { mockUserResponseDataWithOnePage } from "../config/mocks/users-data.mock";
+import usersReducer, { fetchUsers, revealUserEmail, userAction } from "@/store/users/users-slice";
+import { mockFilteredUserResponseDataWithOnePage, mockUserResponseDataWithOnePage } from "../config/mocks/users-data.mock";
 import UsersService from "@/services/users/users-service";
 
 const initialState: IUserState = {
@@ -83,6 +83,61 @@ describe("User Slice", () => {
 
     // Assert
     expect(global.fetch).toHaveBeenCalledWith("/api/users");
+    jest.restoreAllMocks();
+  });
+
+  it("should mask user email when dispatch maskUserEmail action", () => {
+    // Arrange
+    const initialState: IUserState = {
+      userList: mockFilteredUserResponseDataWithOnePage,
+      isLoading: false,
+      error: undefined
+    }
+    const action = userAction.maskUserEmail(1)
+
+    // Act
+    const state = usersReducer(initialState, action);
+
+    // Assert
+    expect(state.userList[0].email).toEqual("*****");
+  });
+
+  it("should reveal user email when dispatch revealUserEmail.fullfilled action", () => {
+    // Arrange
+    const initialState: IUserState = {
+      userList: mockFilteredUserResponseDataWithOnePage,
+      isLoading: false,
+      error: undefined
+    }
+    const action = {
+      type: revealUserEmail.fulfilled.type,
+      payload: mockUserResponseDataWithOnePage.data[0],
+    };
+
+    // Act
+    const state = usersReducer(initialState, action);
+
+    // Assert
+    expect(state.userList[0].email).toEqual("abcd@mail.com");
+  });
+
+  it("revealUserEmail async thunk action should calls the API correctly", async () => {
+    // Arrange
+    global.fetch = jest.fn();
+    (global.fetch as jest.Mock).mockResolvedValue({
+      status: 200,
+      json: async () => mockUserResponseDataWithOnePage.data[0],
+    });
+
+    const dispatch = jest.fn();
+    const getState = jest.fn();
+    const action = revealUserEmail(1);
+
+    // Act
+    await action(dispatch, getState, undefined);
+
+    // Assert
+    expect(global.fetch).toHaveBeenCalledWith(`/api/users/${1}`);
     jest.restoreAllMocks();
   });
 });

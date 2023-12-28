@@ -27,7 +27,7 @@ exports[`renders UserCard component unchanged 1`] = `
         class="d-flex align-items-center"
       >
         <span>
-          ****@email.com
+          *****
         </span>
         <img
           alt="mask"

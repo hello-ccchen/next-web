@@ -6,7 +6,7 @@ exports[`EmailMask component email should masked correctly 1`] = `
     class="d-flex align-items-center"
   >
     <span>
-      ********@mail.com
+      *****
     </span>
     <img
       alt="mask"
