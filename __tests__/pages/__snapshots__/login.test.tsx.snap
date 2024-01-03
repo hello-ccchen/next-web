@@ -15,7 +15,7 @@ exports[`Login Page renders \`You're almost there!\` when detected no callbackur
         <h1
           class="text-white fw-bolder"
         >
-          You're almost there!
+          You're almost there! 😁
         </h1>
       </div>
       <div
@@ -58,7 +58,7 @@ exports[`Login Page renders no access rigth when detected callbackurl 1`] = `
         <h1
           class="text-white fw-bolder"
         >
-          401: Uh-oh, you do not have access.
+          401: Uh-oh, you do not have access. 😟
         </h1>
       </div>
       <div

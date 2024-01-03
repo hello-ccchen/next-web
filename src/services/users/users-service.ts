@@ -30,4 +30,4 @@ const getUserById = async(id: number): Promise<IUser> => {
   return result.data as IUser;
 }
 
-export default { getUsers, getUserById }
+export { getUsers, getUserById }

@@ -6,8 +6,8 @@ import styles from "./page.module.css";
 
 const Login = () => {
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") ?? "/users";
-  const isNotRedirectPage = callbackUrl === "/users";
+  const callbackUrl = searchParams.get("callbackUrl") ?? "/";
+  const isNotRedirectPage = callbackUrl === "/";
 
   return (
     <div className={`container shadow-sm ${styles.container}`}>
@@ -17,8 +17,8 @@ const Login = () => {
         >
           <h1 className="text-white fw-bolder">
             {isNotRedirectPage
-              ? "You're almost there!"
-              : "401: Uh-oh, you do not have access."}
+              ? "You're almost there! 😁"
+              : "401: Uh-oh, you do not have access. 😟"}
           </h1>
         </div>
         <div className="col-sm-6 border d-flex justify-content-center align-items-center">

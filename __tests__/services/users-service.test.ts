@@ -1,4 +1,5 @@
-import UsersService from "@/services/users/users-service";
+
+import { getUserById, getUsers } from "@/services/users/users-service";
 import {
   mockFiltedUserResponseDataWithTwoPage,
   mockFilteredUserResponseDataWithOnePage,
@@ -26,7 +27,7 @@ describe("Users service", () => {
     });
 
     // Act
-    const data = await UsersService.getUsers();
+    const data = await getUsers();
 
     // Assert
     expect(data).toEqual([mockFilteredUserResponseDataWithOnePage[0]]);
@@ -50,7 +51,7 @@ describe("Users service", () => {
       });
 
     // Act
-    const data = await UsersService.getUsers();
+    const data = await getUsers();
 
     // Assert
     expect(data).toEqual(mockFiltedUserResponseDataWithTwoPage);
@@ -70,7 +71,7 @@ describe("Users service", () => {
     });
 
     // Act & Assert
-    await expect(UsersService.getUsers()).rejects.toThrow("Failed to get user list.");
+    await expect(getUsers()).rejects.toThrow("Failed to get user list.");
     expect(global.fetch).toHaveBeenCalledWith(
       "https://reqres.in/api/users?page=1"
     );
@@ -84,7 +85,7 @@ describe("Users service", () => {
     });
 
     // Act & Assert
-    await expect(UsersService.getUserById(1)).rejects.toThrow("Failed to get user with id: 1");
+    await expect(getUserById(1)).rejects.toThrow("Failed to get user with id: 1");
     expect(global.fetch).toHaveBeenCalledWith(
       "https://reqres.in/api/users/1"
     );
@@ -99,7 +100,7 @@ describe("Users service", () => {
     });
 
     // Act
-    const data = await UsersService.getUserById(2);
+    const data = await getUserById(2);
 
     // Assert
     expect(data).toEqual(mockUserResponseDataWithIdOne.data);

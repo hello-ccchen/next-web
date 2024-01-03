@@ -1,7 +1,6 @@
 import { IUserState } from "@/interfaces/users/users-interface";
 import usersReducer, { fetchUsers, revealUserEmail, userAction } from "@/store/users/users-slice";
 import { mockFilteredUserResponseDataWithOnePage, mockUserResponseDataWithOnePage } from "../config/mocks/users-data.mock";
-import UsersService from "@/services/users/users-service";
 
 const initialState: IUserState = {
   isLoading: true,

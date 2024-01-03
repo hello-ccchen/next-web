@@ -11,6 +11,7 @@ const Users = () => {
 
   useEffect(() => {
     dispatch(fetchUsers());
+    console.log('Rendering Users Page...')
   }, []);
 
   if (isLoading) return <h1>Loading...</h1>;

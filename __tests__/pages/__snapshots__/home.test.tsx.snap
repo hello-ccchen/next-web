@@ -3,7 +3,7 @@
 exports[`renders home page unchanged 1`] = `
 <div>
   <h1>
-    Welcome to THREEC Next.js Web! This is Home Page
+    Welcome 👋 to THREEC Next.js Web! This is 🏠 Page
   </h1>
 </div>
 `;

@@ -21,6 +21,7 @@ const customJestConfig = {
     "!src/store/store.ts",
     "!src/store/store-provider.tsx",
     "!src/middleware.ts",
+    "!src/**/products/**/*", // TODO: create TEST
     "!**/*.d.ts",
     "!**/node_modules/**",
     "!**/.next/**",

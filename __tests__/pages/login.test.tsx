@@ -26,7 +26,7 @@ describe("Login Page", () => {
 
     // Assert
     expect(container).toMatchSnapshot();
-    expect(getByText("401: Uh-oh, you do not have access.")).toBeTruthy();
+    expect(getByText("401: Uh-oh, you do not have access. 😟")).toBeTruthy();
   });
 
   it("renders `You're almost there!` when detected no callbackurl", () => {
@@ -40,7 +40,7 @@ describe("Login Page", () => {
 
     // Assert
     expect(container).toMatchSnapshot();
-    expect(getByText(`You're almost there!`)).toBeTruthy();
+    expect(getByText(`You're almost there! 😁`)).toBeTruthy();
   });
 
   it("should sign in when user click the sign in button", () => {
@@ -56,6 +56,6 @@ describe("Login Page", () => {
     fireEvent.click(loginButton as Element);
 
     // Assert
-    expect(signIn).toHaveBeenCalledWith("google", { callbackUrl: "/users" });
+    expect(signIn).toHaveBeenCalledWith("google", { callbackUrl: "/" });
   });
 });
