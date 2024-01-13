@@ -1,7 +1,7 @@
 import { IProduct } from "@/interfaces/products/products-interface";
 
 const getProducts = async (): Promise<IProduct[]> => {
-  const response = await fetch("https://dummyjson.com/products?limit=5&skip=5");
+  const response = await fetch("https://dummyjson.com/products/category/laptops");
   if (response.status !== 200) {
     throw new Error('Failed to get product list.');
   }
