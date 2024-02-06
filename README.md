@@ -1,6 +1,10 @@
 [![Node.js CI](https://github.com/hello-ccchen/next-web/actions/workflows/ci.yml/badge.svg)](https://github.com/hello-ccchen/next-web/actions/workflows/ci.yml)  
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Example App
+
+An example app is deployed here: [Vercel](https://threec-next-web.vercel.app/)
+
 ## Getting Started
 
 First, run the development server:
